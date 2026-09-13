@@ -1,0 +1,32 @@
+{
+  "name": "sticker-gliph",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-based dithering, halftone and ASCII art studio for images, video and webcam.",
+  "license": "MIT",
+  "keywords": [
+    "dithering",
+    "ascii-art",
+    "halftone",
+    "glitch-art",
+    "pixel-art",
+    "image-processing",
+    "creative-coding"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "gifenc": "^1.0.3",
+    "mp4-muxer": "^5.2.2"
+  }
+}

@@ -1,0 +1,14 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local tooling
+.claude/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+# Repository setup notes (not part of the project)
+GITHUB.txt
