@@ -4,6 +4,8 @@ Turn images, videos and your webcam into ASCII art, dithered pixels and print-st
 
 Everything runs locally in the browser. No account, no upload, no AI.
 
+**[Try it live at gliph.aniss.xyz](https://gliph.aniss.xyz)**, no install needed (best in Chrome or Edge).
+
 ## Features
 
 - **Glyphs (ASCII)**: 48 character sets in 11 categories (classic ASCII, blocks, Braille, runes, blackletter, katakana, card suits...), glyphs ranked by their real ink density, shape-aware mapping, custom characters, animated character offset.
