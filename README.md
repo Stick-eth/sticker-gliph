@@ -34,6 +34,13 @@ npm run build
 
 The site is generated in `dist/`.
 
+Or run it with Docker (served by Nginx on port 80):
+
+```bash
+docker build -t sticker-gliph .
+docker run -p 8080:80 sticker-gliph
+```
+
 ## How to use
 
 1. **Load a source**: drag and drop a file, paste an image, or click Demo or Webcam.
