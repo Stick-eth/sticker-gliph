@@ -344,7 +344,7 @@ function writeUserPresets(list: { name: string; settings: any }[]) {
 }
 
 export function presetsPanel(): Panel {
-  const sec = section('Presets', { id: 'presets' });
+  const sec = section('Presets', { id: 'presets', open: true });
   const builtin = h('div', { class: 'preset-grid' });
   let tag = '';
   for (const p of BUILTIN_PRESETS) {

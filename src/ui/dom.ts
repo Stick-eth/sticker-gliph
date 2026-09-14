@@ -27,14 +27,20 @@ export function section(title: string, opts: { open?: boolean; id?: string; extr
   const summary = h('summary', { class: 'sec-title' }, h('span', { class: 'sec-name' }, title));
   if (opts.extra) summary.append(opts.extra);
   const root = h('details', { class: 'sec', id: opts.id }, summary, body);
-  let open = opts.open !== false;
+  // Sections start collapsed unless asked otherwise; the user's own toggles are remembered.
+  const key = 'sg.panel.' + opts.id;
+  let open = opts.open === true;
   try {
-    const saved = opts.id ? localStorage.getItem('sg.sec.' + opts.id) : null;
+    const saved = opts.id ? localStorage.getItem(key) : null;
     if (saved !== null) open = saved === '1';
   } catch { /* storage unavailable */ }
   root.open = open;
+  let current = open;
   root.addEventListener('toggle', () => {
-    try { if (opts.id) localStorage.setItem('sg.sec.' + opts.id, root.open ? '1' : '0'); } catch { /* ignore */ }
+    // Setting `open` above also dispatches a toggle event: only persist real changes.
+    if (root.open === current) return;
+    current = root.open;
+    try { if (opts.id) localStorage.setItem(key, root.open ? '1' : '0'); } catch { /* ignore */ }
   });
   return { root, body };
 }
